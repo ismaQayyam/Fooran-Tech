@@ -1,0 +1,166 @@
+/* =============================
+   Base About Section
+============================= */
+.section-about {
+  width: 100%;
+
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Desktop layout */
+.about-text-wrapper {
+  padding-left: 120px;   /* increased for large screens */
+  width: 790px;          /* wider text area */
+  order: 1;
+    font-family: var(--font-primary);
+}
+
+.about-img-desktop {
+  flex: 1;
+  order: 2;
+}
+
+.about-img-desktop img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;    /* controlled height */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Mobile image hidden initially */
+.about-img-mobile {
+  display: none;
+}
+
+/* Text styling */
+.about-brand-dark {
+  color: #000;
+  font-weight: 700;
+   font-size: 20px;
+     font-family: var(--font-primary);
+}
+
+.about-brand-accent {
+  color: #ff5a2c;
+  font-weight: 700;
+  font-size: 20px;
+    font-family: var(--font-primary);
+}
+
+.about-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 10px 0;
+    font-family: var(--font-primary);
+}
+
+.about-highlight {
+  color: #ff5a2c;
+  font-weight: bold;
+    font-family: var(--font-primary);
+}
+
+.about-description {
+  font-size: 22px;
+  color: #333;
+  line-height: 1.5;
+    font-family: var(--font-primary);
+}
+.about-extra-text{
+  text-align: center !important;
+  font-size: 19px !important;
+    font-family: var(--font-primary);
+}
+/* =============================
+   MOBILE (<992px)
+   Image top, text bottom
+============================= */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-img-desktop {
+    display: none;
+  }
+
+  .about-img-mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .about-text-wrapper {
+    width: 100%;
+    max-width: 620px;
+    text-align: center;
+    padding: 0 20px;
+      font-family: var(--font-primary);
+  }
+
+  .about-title {
+    font-size: 26px;
+      font-family: var(--font-primary);
+  }
+
+  .about-description {
+    font-size: 15px;
+      font-family: var(--font-primary);
+  }
+     .about-extra-text {
+    display: none;
+  }
+}
+
+/* =============================
+   TABLETS (992px–1299px)
+   Left text / right image (like large screens)
+============================= */
+@media (min-width: 992px) and (max-width: 1299px) {
+    .about-extra-text {
+    display: block;
+      font-family: var(--font-primary);
+  }
+  .about-container {
+    flex-direction: row;
+    align-items: flex-start; /* align text and image at top */
+    gap: 20px;
+      font-family: var(--font-primary);
+  }
+
+  .about-text-wrapper {
+      font-family: var(--font-primary);
+    width: 600px;         /* width for tablet */
+    padding-left: 90px;   /* padding from container left */
+    padding-top: 20px;    /* spacing from top if needed */
+    text-align: left;     /* left-align text */
+  }
+
+  .about-title {
+      font-family: var(--font-primary);
+    font-size: 30px;
+  }
+
+  .about-description {
+      font-family: var(--font-primary);
+    font-size: 17px;
+  }
+
+  .about-img-desktop img {
+    max-height: 420px;    /* scaled proportionally */
+    object-fit: cover;
+    padding-top: 0;       /* remove extra top gap */
+    margin: 0;            /* remove margin if any */
+  }
+}
+

@@ -1,0 +1,272 @@
+/* ================== Base Section ================== */
+.story-section {
+  width: 100%;
+  padding: 70px 6%;
+  text-align: center;
+  background: #FCEFEB;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: storySectionFadeIn 0.8s forwards;
+  animation-delay: 0.3s;
+}
+
+/* ================== Story Highlight ================== */
+.highlight-story-bg {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: highlightStoryFadeIn 0.8s forwards;
+  animation-delay: 0.4s;
+}
+
+.highlight-story-bg::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  width: 130px;
+  height: 70px;
+  transform: translate(-50%, -50%);
+  background-image: url("/public/Image/dot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.highlight-story-bg span {
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+}
+
+/* ================== Subtitle ================== */
+.story-subtitle {
+  margin-top: 8px;
+  font-size: 1.08rem;
+  color: #555;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: storySubtitleFadeIn 0.8s forwards;
+  animation-delay: 0.5s;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* ================== Card ================== */
+.story-card {
+  width: 78%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 4px 25px rgba(0,0,0,0.07);
+  margin: 50px auto 0 auto;
+  overflow: hidden;
+  padding: 0;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: storyCardFadeIn 0.8s forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.story-card:nth-child(1) { animation-delay: 0.6s; }
+.story-card:nth-child(2) { animation-delay: 0.8s; }
+.story-card:nth-child(3) { animation-delay: 1s; }
+
+.story-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+/* ================== Image ================== */
+.story-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  transition: transform 0.4s ease;
+}
+
+.story-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ================== Content ================== */
+.story-content {
+  max-width: 55%;
+  text-align: left;
+  padding: 25px 30px;
+}
+
+.story-badge {
+  background: #ffb23f;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.story-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #ffa500;
+}
+
+.story-heading,
+.story-description,
+.story-link {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: textFadeIn 0.8s forwards;
+  animation-delay: 0.7s;
+}
+
+.story-heading {
+  font-size: 1.9rem;
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.story-description {
+  margin: 14px 0;
+  color: #666;
+  line-height: 1.5rem;
+}
+
+.story-link {
+  color: #c10000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ================== Arrows ================== */
+.story-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.story-arrow {
+  background: white;
+  color: #c10000;
+  border: 1px solid #c10000;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.story-arrow:hover {
+  transform: scale(1.1);
+  background: #fcebeb;
+}
+
+/* ================== Progress Bar ================== */
+.story-progress {
+  margin-top: 35px;
+  width: 60%;
+  height: 4px;
+  background: #e4e4e4;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+}
+
+.story-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #c10000;
+  border-radius: 50px;
+  transition: width 0.4s ease;
+  animation: progressBarFill 1s forwards;
+}
+
+/* ================== Title ================== */
+.story-title {
+  font-size: 35px !important;
+  font-weight: bold;
+}
+
+/* ================== Keyframes ================== */
+@keyframes storySectionFadeIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes highlightStoryFadeIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes storySubtitleFadeIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes storyCardFadeIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes textFadeIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes progressBarFill { to { width: 100%; } }
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+/* Tablets & Mobile */
+@media (max-width: 900px) {
+  .story-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .story-image img {
+    width: 100%;
+    max-width: 260px;
+    max-height: 180px;
+    object-fit: cover;
+  }
+
+  .story-content {
+    max-width: 100%;
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  .story-heading {
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+
+  .story-description {
+    font-size: 0.9rem;
+    margin: 10px 0;
+    line-height: 1.3rem;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 768px) {
+  .story-section {
+    padding: 40px 1%;
+  }
+
+  .highlight-story-bg::before {
+    width: 90px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-card {
+    padding: 12px;
+  }
+
+  .story-image img {
+    max-width: 220px;
+    max-height: 150px;
+  }
+
+  .highlight-story-bg::before {
+    width: 75px;
+    height: 45px;
+  }
+}

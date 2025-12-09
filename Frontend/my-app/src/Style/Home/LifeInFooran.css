@@ -1,0 +1,122 @@
+.life-section {
+  width: 100%;
+  padding: 60px 10%;
+  text-align: center;
+  background: #fafafa;
+}
+
+.life-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.life-subtitle {
+  max-width: 850px;
+  margin: 0 auto 50px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.life-cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.life-card {
+  width: 290px;
+  background: #fff;
+  padding: 30px 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: .3s ease;
+}
+
+.life-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 26px rgba(0,0,0,0.12);
+}
+
+.life-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #fff;
+}
+
+.icon-blue {
+  background: linear-gradient(135deg,#27568E, #5595A8);
+}
+
+.icon-yellow {
+  background: linear-gradient(135deg, #DB721A, #FFD929);
+}
+
+.icon-red {
+  background: linear-gradient(135deg, #C7372F,#E17866);
+}
+.life-icon svg {
+  fill: #fff !important;
+  color: #fff !important;
+}
+
+
+.life-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.life-card-text {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .life-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.life-card {
+  width: 290px;
+  background: #fff;
+  padding: 30px 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.life-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Icon animation */
+.life-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #fff;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.life-card:hover .life-icon {
+  transform: scale(1.15) rotate(8deg);
+  opacity: 0.9;
+}

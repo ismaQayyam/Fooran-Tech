@@ -1,0 +1,293 @@
+.embedur-overview-wrapper {
+  width: 100%;
+  background: linear-gradient(170deg, #fff1c3 0%, #ffc3c1 100%);
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Inner container */
+.embedur-overview {
+  max-width: 1600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: black;
+}
+
+/* Header / Title */
+.embedur-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.embedur-title {
+  font-family: var(--font-primary);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.title-underline {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff5e5e, #e74c3c);
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+/* List */
+.embedur-list {
+  list-style: none;
+  padding-left: 150px;
+}
+
+.embedur-list-item {
+  margin-left: 30px !important;
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+  color: black;
+}
+
+.list-bullet {
+  width: 20px;
+  height: 20px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 15px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.list-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: black;
+  font-family: var(--font-primary); /* using global font */
+}
+
+/* Image */
+.embedur-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.embedur-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  width: 360px !important;
+  height: 330px !important;
+  margin-top: 60px;
+}
+/* ===============================
+   HOVER & ANIMATIONS
+   =============================== */
+
+/* Overall section fade-in animation on load */
+.embedur-overview {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+/* Keyframes for fade-in */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image hover: slight scale & shadow */
+
+
+.embedur-image img:hover {
+  transform: scale(1.05);
+
+  cursor: pointer;
+}
+
+/* List item hover: slide bullet and text */
+.embedur-list-item {
+  transition: transform 0.3s ease, background 0.3s ease;
+  border-radius: 6px;
+}
+
+.embedur-list-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 94, 94, 0.05);
+}
+
+/* Bullet hover animation */
+.list-bullet {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.embedur-list-item:hover .list-bullet {
+  transform: scale(1.3);
+  background-color: #ce3737;
+}
+
+/* Text hover: subtle color change */
+.list-text {
+  transition: color 0.3s ease;
+}
+
+.embedur-list-item:hover .list-text {
+  color: #000000;
+}
+
+/* Title hover: subtle lift */
+.embedur-title {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.embedur-title:hover {
+  transform: translateY(-2px);
+  color: #000000;
+}
+
+/* Optional: small bounce animation on image load */
+@keyframes bounceIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.embedur-image img {
+  animation: bounceIn 0.6s ease;
+}
+
+
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .embedur-overview {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .embedur-list-item {
+    margin-left: 0 !important;   /* remove zig-zag spacing */
+    width: 100%;
+    justify-content: flex-start; /* align left */
+    padding-left: 20px;          /* clean equal indent */
+  }
+
+  .list-bullet {
+    margin-right: 12px;          /* balanced spacing */
+  }
+
+  .embedur-image img {
+    width: 320px !important;
+    height: auto !important;
+    margin-top: 20px;
+  }
+
+  .list-text {
+    font-size: 1rem;
+  }
+    .title-underline {
+    display: none !important;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+  .embedur-title {
+    font-size: 1.8rem;
+    margin-bottom: 6px !important;   /* title ke bilkul niche underline */
+  }
+
+   .title-underline {
+    display: none !important;
+  }
+
+  .embedur-list {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .embedur-list-item {
+    margin-left: 0 !important;
+    padding-left: 15px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .list-bullet {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    font-size: 8px;
+  }
+
+  .list-text {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+}
+
+
+
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+
+  .embedur-overview {
+    padding: 0 15px;
+  }
+
+  .embedur-title {
+    font-size: 1.6rem;
+    margin-bottom: 5px !important; /* underline title ke niche */
+  }
+
+  .title-underline {
+    display: none !important;
+  }
+
+  .embedur-image img {
+    width: 250px !important;
+    height: auto !important;
+    margin-top: 10px;
+  }
+
+  .embedur-list-item {
+    margin-left: 0 !important;
+    padding-left: 12px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .list-bullet {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    font-size: 8px;
+  }
+
+  .list-text {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}
+

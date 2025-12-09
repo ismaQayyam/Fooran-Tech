@@ -1,0 +1,139 @@
+:root {
+  /* Theme variables */
+  --btn-bg: linear-gradient(to top, #c7372f 0%, #dc3545 100%);
+  --btn-color: #ffffff;
+  --btn-radius: 8px;
+  --btn-h: 44px;
+  --btn-px: 16px;
+  --btn-fs: 16px;
+  --btn-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  --btn-focus-ring: rgba(220, 53, 69, 0.18);
+}
+
+/* Base button */
+.global-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: var(--btn-h);
+  padding: 0 var(--btn-px);
+  font-size: var(--btn-fs);
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease, background 200ms ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-size: 100% 100%;
+}
+
+/* Hover — slightly lighter & lifted */
+.global-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(to top, #dc3545 0%, #e84b44 100%);
+}
+
+/* Active — pressed look */
+.global-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to top, #b32d27 0%, #c7372f 100%);
+}
+
+/* Focus (accessibility) */
+.global-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--btn-focus-ring), 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Disabled */
+.global-btn.is-disabled,
+.global-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  background: linear-gradient(to top, #bbb 75%, #ddd 25%);
+}
+
+/* Icon alignment */
+.global-btn > svg {
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+}
+
+/* No text wrapping */
+.global-btn {
+  white-space: nowrap;
+}
+
+/* Full width helper */
+.global-btn.full {
+  width: 100%;
+}
+.global-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Default slow shine */
+.global-btn::after {
+  content: '';
+  position: absolute;
+  top: -100%;            /* Start above the button */
+  left: -60%;            /* Start left */
+  width: 5%;            /* Large diagonal width */
+  height: 250%;          /* Covers entire button height while moving */
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 248, 248, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(252, 251, 251, 0) 100%
+  );
+  transform: rotate(20deg);     /* Diagonal shine */
+  pointer-events: none;
+  animation: shineMove 5s linear infinite;
+  opacity: 0;
+}
+
+/* Fast shine on hover */
+.global-btn:hover::after {
+  animation: shineMoveFast 1.2s linear 1;
+  opacity: 1;
+}
+
+/* Slow background shine (automatic) */
+@keyframes shineMove {
+  0% {
+    top: -120%;
+    left: -60%;
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    top: 120%;
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+/* Fast shine for hover */
+@keyframes shineMoveFast {
+  0% {
+    top: -120%;
+    left: -60%;
+    opacity: 1;
+  }
+  100% {
+    top: 120%;
+    left: 120%;
+    opacity: 1;
+  }
+}

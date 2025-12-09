@@ -1,0 +1,48 @@
+.joinus-section {
+  width: 100%;
+  background: #fff7f1;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.joinus-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 18px;
+}
+
+.joinus-subtitle {
+  font-size: 16px;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 35px;
+  line-height: 1.6;
+}
+/* Tablet */
+@media (max-width: 992px) {
+  .joinus-title {
+    font-size: 32px;
+  }
+  .joinus-subtitle {
+    font-size: 15px;
+    max-width: 600px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .joinus-section {
+    padding: 60px 15px;
+  }
+  .joinus-title {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+  .joinus-subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,137 @@
+/* Overlay */
+.talkus-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Modal */
+.talkus-modal {
+  background: #fff;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 10px;
+  padding: 40px;
+  position: relative;
+  animation: talkus-fadeIn 0.3s ease;
+}
+
+@keyframes talkus-fadeIn {
+  from { opacity: 0; transform: scale(.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Close button */
+.talkus-close {
+  position: absolute;
+  top: -14px;
+  right: -18px;
+  background: #FF6A3D;
+  color: white;
+  border: 2px solid #d9d9d9;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Title + Sub */
+.talkus-title {
+  color: #333;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.talkus-sub {
+  text-align: center;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.talkus-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Base grid styling */
+.talkus-row {
+  display: grid;
+  gap: 20px;
+}
+
+/* Inputs */
+.talkus-input {
+  width: 100%;
+  height: 48px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.talkus-textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* Checkbox */
+.talkus-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+
+  /* Reduce padding of the modal */
+  .talkus-modal {
+    padding: 16px;
+  }
+
+  /* Reduce spacing between form elements */
+  .talkus-form {
+    gap: 12px;
+  }
+
+  /* Make inputs shorter */
+  .talkus-input {
+    height: 42px;
+    padding: 10px;
+  }
+
+  /* Make textarea shorter */
+  .talkus-textarea {
+    min-height: 90px;
+    padding: 10px;
+  }
+
+  /* Reduce title size */
+  .talkus-title {
+    font-size: 24px;
+  }
+}
+
+
+@media (min-width: 801px) {
+  .talkus-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}

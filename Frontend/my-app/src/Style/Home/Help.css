@@ -1,0 +1,358 @@
+/* ================== Help Section ================== */
+.help-section {
+  text-align: center;
+  padding: 30px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.help-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #000;
+}
+
+/* ---------- Highlight Behind Text ---------- */
+.highlight-help-bg {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.highlight-help-bg .highlight-help-img {
+  position: absolute;
+  top: -10px;   /* adjust vertical position */
+  left: 30px;  /* adjust horizontal position */
+  width: 65px;  /* size of highlight image */
+  height: 65px;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.highlight-help-bg span {
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+}
+
+/* ---------- Subtitle ---------- */
+.help-subtitle {
+  width: 60%;
+  margin: 0 auto 40px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ---------- Carousel ---------- */
+.help-carousel-wrapper {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.help-carousel {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+/* ---------- Cards ---------- */
+.help-card {
+  width: 350px;
+  height: 450px;
+  background: #fff;
+  border-radius: 16px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.help-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: block;
+}
+
+/* Text inside card */
+.help-card h3,
+.help-card p,
+.help-card a {
+ padding-left: 10px;
+}
+
+.help-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.help-card p {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.help-card a {
+  font-weight: 600;
+  color:#C7372F; /* sky blue */
+  text-decoration: none;
+}
+
+/* ---------- Progress Bar ---------- */
+.help-progress-bar {
+  width: 100%;
+  margin: 35px auto 20px;
+  height: 4px;
+  background: #ffe6e6;
+  border-radius: 20px;
+}
+
+.help-progress-fill {
+  height: 4px;
+  background: #C7372F;
+  border-radius: 20px;
+  transition: width 0.4s ease;   /* smooth animation */
+}
+
+/* ---------- Bottom Arrows ---------- */
+.help-arrow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 750px; /* same or slightly wider than progress bar */
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.help-bottom-arrow {
+  width: 42px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #C7372F; /* sky blue */
+  background: #fff;
+  color: #C7372F; /* sky blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 22px;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+.help-bottom-arrow svg {
+  transition: transform 0.25s ease;
+}
+
+.help-bottom-arrow:hover svg {
+  transform: scale(1.15);
+}
+/* -------- Section fade-in -------- */
+.help-section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: helpSectionFadeIn 0.8s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes helpSectionFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------- Highlight fade-in -------- */
+.highlight-help-bg {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: highlightHelpFadeIn 0.8s forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes highlightHelpFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------- Subtitle fade-in -------- */
+.help-subtitle {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: helpSubtitleFadeIn 0.8s forwards;
+  animation-delay: 0.5s;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+@keyframes helpSubtitleFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------- Card fade-in & hover -------- */
+.help-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: helpCardFadeIn 0.8s forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.help-card:nth-child(1) { animation-delay: 0.6s; }
+.help-card:nth-child(2) { animation-delay: 0.8s; }
+.help-card:nth-child(3) { animation-delay: 1s; }
+
+@keyframes helpCardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.help-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+
+
+/* -------- Card text fade-in -------- */
+.help-card h3, .help-card p, .help-card a {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: helpCardTextFadeIn 0.8s forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes helpCardTextFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------- Bottom Arrow hover -------- */
+.help-bottom-arrow {
+  transition: all 0.3s ease;
+}
+
+.help-bottom-arrow:hover {
+  transform: scale(1.1);
+  background: #ffe6e6;
+}
+
+.help-bottom-arrow svg {
+  transition: transform 0.25s ease;
+}
+
+.help-bottom-arrow:hover svg {
+  transform: scale(1.15);
+}
+
+/* -------- Progress Bar animation -------- */
+
+/* ================== Responsive ================== */
+
+/* ---------- Tablets (601px – 1024px) ---------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .help-carousel {
+    gap: 25px;
+  }
+
+  .help-card {
+    flex: 0 0 45%;  /* 2 cards visible */
+    max-width: 45%;
+  }
+
+  .help-card img {
+    height: 200px;
+  }
+
+  .help-progress-bar {
+    width: 90%;
+    margin: 25px auto;
+  }
+
+  .help-arrow-controls {
+    width: 250px; /* scaled for tablet */
+  }
+
+  .help-bottom-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .highlight-help-bg .highlight-help-img {
+    width: 50px;
+    height: 50px;
+    top: 4px;
+    left: 35px;
+  }
+}
+
+/* ---------- Mobile (≤ 600px) ---------- */
+@media (max-width: 600px) {
+  .help-carousel {
+    justify-content: center;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .help-card {
+    flex: 0 0 90%; /* show 1 card at a time */
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .help-card img {
+    height: 200px;
+  }
+
+  .help-progress-fill {
+    width: 10px;
+    height: 4px;
+    border-radius: 20px;
+  }
+
+  .help-arrow-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 170px; /* match progress bar */
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .help-bottom-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .highlight-help-bg .highlight-help-img {
+    width: 45px;
+    height: 45px;
+    top: -8px;
+    left: 30px !important;
+  }
+}
+
+/* ---------- Small Phones (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  .highlight-help-bg .highlight-help-img {
+    width: 55px;
+    height: 55px;
+    top: -6px;
+right: 10px!important;
+  }
+}

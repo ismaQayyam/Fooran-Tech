@@ -1,0 +1,250 @@
+.carsole-fullscreen {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.carsole-slide {
+  width: 100%;
+  height: 100%;
+}
+
+/* === Layout container === */
+.carsole-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Image */
+.carsole-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+/* Overlay for Desktop */
+.carsole-overlay {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  text-align: left;
+  max-width: 580px;
+  color: #000;
+  z-index: 2;
+}
+
+/* Typography */
+.carsole-tag {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.carsole-tag span {
+  color: #dc3545;
+}
+
+.carsole-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.carsole-title span {
+  color: #dc3545;
+  font-weight: 900 !important;
+}
+
+.carsole-desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #000;
+  margin-bottom: 32px;
+  max-width: 460px;
+}
+
+/* === Dots === */
+.carsole-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #d0d0d0;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #dc3545;
+  transform: scale(1.25);
+}
+@media (max-width: 768px) {
+  .carsole-fullscreen {
+    height: 70vh !important;
+  }
+
+  .carsole-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .carsole-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carsole-layout::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(190, 190, 190, 0.4);
+    z-index: 1;
+  }
+
+  .carsole-overlay {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 2;
+    text-align: left;
+    max-width: 80%;
+  }
+
+  .carsole-tag {
+    font-size: 0.9rem !important;
+    color: #fff !important;
+  }
+
+  .carsole-title {
+
+    font-size: 1.4rem !important;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .carsole-desc {
+   
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .carsole-dots {
+    position: static;
+    margin-top: 12px;
+  }
+}
+
+/* === Responsive Layout === */
+@media (max-width: 890px) {
+  .carsole-fullscreen {
+    height: 70vh !important;
+  }
+
+  .carsole-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+
+  .carsole-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carsole-layout::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    z-index: 1;
+  }
+
+  .carsole-overlay {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 2;
+    text-align: left;
+    max-width: 80%;
+  }
+
+  .carsole-tag {
+    font-size: 1rem !important;
+    color: #fff !important;
+  }
+
+  .carsole-title {
+
+    font-size: 1.9rem !important;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .carsole-desc {
+   
+    font-size: 1rem !important;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .carsole-dots {
+    position: static;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carsole-fullscreen {
+    height: 45vh !important;
+  }
+
+  .carsole-title {
+    font-size: 1.2rem !important;
+  }
+
+  .carsole-overlay {
+    left: 6%;
+  }
+    .carsole-dots {
+    position: static;
+    margin-top: 82px;
+  }
+
+}

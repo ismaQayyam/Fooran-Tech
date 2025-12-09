@@ -1,0 +1,150 @@
+.platform-section {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.platform-heading {
+      font-family: var(--font-primary);
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* GRID 3 TOP – 3 BOTTOM */
+.platform-grid {
+  width: 100%;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
+  justify-content: center;
+}
+
+.platform-box {
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center icon and text horizontally */
+  text-align: center;  /* center text */
+}
+
+
+
+/* TEXT */
+.platform-title {
+      font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  max-width: 250px; /* restrict text width */
+}
+
+.platform-desc {
+      font-family: var(--font-primary);
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+  max-width: 250px; /* restrict text width */
+}
+/* ICON BOX */
+.icon-bg {
+  width: 65px;          /* correct width */
+  height: 65px;         /* correct height */
+  border-radius: 18px;  /* slightly rounded corners */
+  display: flex;
+  align-items: center;  /* vertical center */
+  justify-content: center; /* horizontal center */
+  margin-bottom: 15px;  /* spacing below icon */
+}
+
+/* ICON STYLE */
+.platform-icon {
+  font-size: 35px;        /* slightly bigger icon inside 65px box */
+  color: white !important; /* keep icons white */
+  display: flex;
+  align-items: center;    /* vertical center */
+  justify-content: center; /* horizontal center */
+}
+
+
+
+
+
+
+/* ICON HOVER ANIMATION */
+.icon-bg {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.platform-box:hover .icon-bg {
+  transform: rotate(10deg) scale(1.1); /* subtle rotation and scale */
+  background: linear-gradient(135deg, #E17866, #C7372F); /* gradient on hover */
+}
+
+/* TEXT HOVER ANIMATION */
+.platform-title, .platform-desc {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.platform-box:hover .platform-title {
+  color: #140a0a; /* color change */
+  transform: translateY(-3px);
+}
+
+.platform-box:hover .platform-desc {
+  color: #333; /* slightly darker */
+}
+
+/* OPTIONAL: ADD ICON POP ANIMATION */
+.platform-icon {
+  transition: transform 0.3s ease;
+}
+
+.platform-box:hover .platform-icon {
+  transform: scale(1.2) rotate(3deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .platform-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .platform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-title {
+    font-size: 16px;
+      font-family: var(--font-primary);
+  }
+}
+
+
+
+
+/* TEXT */
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .platform-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .platform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-title {
+    font-size: 16px;
+      font-family: var(--font-primary);
+  }
+}

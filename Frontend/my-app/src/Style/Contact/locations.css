@@ -1,0 +1,108 @@
+/* ===============================
+   Locations Section (Roboto-based)
+=============================== */
+.ft-locations {
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #f9fdff 0%, #ffffff 100%);
+  text-align: center;
+  font-family: var(--font-primary);
+}
+
+.ft-locations__title {
+  font-family: var(--font-secondary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-heading-black);
+  margin-bottom: 36px;
+}
+
+.ft-locations__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* === Card === */
+.ft-locations__card {
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 18px 18px;
+  width: 100%;
+  max-width: 380px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border-left: 5px solid var(--color-heading);
+  min-height: 220px;
+}
+
+.ft-locations__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.ft-locations__card h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-heading-black);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.ft-locations__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ft-locations__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ft-locations__item i {
+  font-size: 18px;
+  color: var(--color-heading);
+  margin-top: 3px;
+}
+
+.ft-locations__item h4 {
+  font-family: var(--font-primary);
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-heading-black);
+}
+
+.ft-locations__item p {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.4;
+  margin-bottom: 0.3em;
+}
+
+/* === Map === */
+.ft-map__container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .ft-locations__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ft-locations__card {
+    width: 100%;
+    max-width: 95%;
+  }
+}

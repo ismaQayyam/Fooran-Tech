@@ -1,0 +1,131 @@
+/* ===================== BASE STYLES ===================== */
+
+.ms-about-wrapper {
+  width: 100%;
+}
+
+.ms-about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ms-about-text {
+  margin-left: 90px;
+  max-width: 750px;
+}
+
+.ms-brand-dark {
+  color: #000;
+  font-weight: 700;
+}
+
+.ms-brand-accent {
+  color: #ff5a2c;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.ms-highlight {
+  color: #ff5a2c;
+  font-weight: bold;
+}
+
+.ms-about-img-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.ms-about-img {
+  object-fit: contain;
+  width: 110%;
+}
+
+.Iot-title {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.Iot-description {
+  font-size: 22px;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ms-about-container {
+    position: relative; /* container is reference for absolute positioning */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Image wrapper now has a lower z-index so text can overlay */
+  .ms-about-img-wrapper {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1; 
+  }
+
+  /* Image itself stays responsive */
+  .ms-about-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Text positioned on top of image */
+  .ms-about-text {
+    position: absolute;
+    top: 20px;          /* distance from top of container */
+    left:-50px;          /* distance from left edge */
+    max-width: 45%;     /* text width limit */
+    color: #000;
+    z-index: 10;        /* ensure text is above the image */
+  }
+
+  .Iot-title {
+    font-size: 28px;
+    margin-bottom: 0.5rem;
+  }
+
+  .Iot-description {
+    font-size: 20px;
+    margin-top: 0;
+  }
+}
+
+
+
+/* ===================== MOBILE (stack vertically) ===================== */
+@media (max-width: 700px) {
+  .ms-about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  
+  }
+
+  .ms-about-text,
+  .ms-about-img-wrapper {
+    max-width: 100%; /* full width for mobile */
+    margin: 0; /* remove tablet top margin */
+
+  }
+
+  .ms-about-img {
+    width: 100%; /* scale image to full width */
+    height: auto; /* maintain aspect ratio */
+  }
+
+  .Iot-title {
+    font-size: 15px;
+  }
+
+  .Iot-description {
+    font-size: 14px;
+  }
+}

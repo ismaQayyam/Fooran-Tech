@@ -1,0 +1,224 @@
+/* ======================================
+   EMPLOYEE SLIDER SECTION
+====================================== */
+
+/* SECTION */
+.emp-section {
+  width: 100%;
+  padding: 60px 0px;
+  text-align: center;
+  font-family: var(--font-primary); /* updated font */
+}
+
+.emp-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: var(--font-secondary);
+}
+
+.emp-subtitle {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  font-family: var(--font-primary);
+}
+
+/* SLIDER CONTAINER */
+.emp-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* SLIDER */
+.emp-slider {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+/* CARD BASE STYLE */
+.emp-slide-card {
+  flex: 0 0 300px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.4s ease;
+  pointer-events: none;
+  font-family: var(--font-primary);
+}
+
+.emp-slide-card.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.emp-slide-card.side {
+  opacity: 0.45;
+  transform: scale(0.9);
+}
+
+.emp-slide-card.hidden {
+  display: none;
+}
+
+/* IMAGE */
+.emp-img-wrapper {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #e8ecff;
+}
+
+.emp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT */
+.emp-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--font-secondary);
+}
+
+.emp-role {
+  font-size: 1rem;
+  color: #dc3545;
+  margin-bottom: 10px;
+  font-family: var(--font-primary);
+}
+
+.emp-desc {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+  font-family: var(--font-primary);
+}
+
+/* NAV BUTTONS */
+.emp-nav-btn {
+  background-color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.emp-nav-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.left {
+  left: 250px; /* closer to cards on large screens */
+}
+
+.right {
+  right: 250px;
+}
+
+/* DOTS */
+.emp-dots {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #ccc;
+}
+
+.active-dot {
+  background: #dc3545;
+  transform: scale(1.3);
+}
+
+/* ======================================
+   RESPONSIVE LAYOUT
+====================================== */
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .emp-slide-card {
+    flex: 0 0 250px;
+  }
+
+  .emp-slider {
+    gap: 15px;
+  }
+
+  .left {
+    left: -15px;
+  }
+
+  .right {
+    right: -15px;
+  }
+}
+
+/* Mobile/Tablets (up to 768px) */
+@media (max-width: 868px) {
+    .emp-nav-btn { border: none; font-size: 2rem; cursor: pointer; background-color: transparent; transition: 0.3s ease; position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; }
+  .emp-slider {
+    justify-content: center; /* center the active card */
+    gap: 0; /* remove extra gap for 1 card view */
+  }
+
+  .emp-slide-card {
+    flex: 0 0 90%; /* only 1 card fits */
+    margin: 0 auto;
+  }
+
+  .emp-slide-card.side {
+    display: none; /* hide side cards completely */
+  }
+
+  .emp-nav-btn {
+    font-size: 1.8rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .left {
+    left: 7px;
+  }
+
+  .right {
+    right: 10px !important;
+  }
+}

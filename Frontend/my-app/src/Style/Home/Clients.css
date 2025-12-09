@@ -1,0 +1,130 @@
+/* ==== Main Section ==== */
+.team-wrapper {
+  text-align: center;
+  padding: 80px 0;
+  background: #fff;
+}
+
+.team-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #111;
+}
+
+.team-highlight {
+  position: relative;
+}
+
+.team-highlight::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 87, 34, 0.25);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.team-subtitle {
+  color: #555;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* ==== Slider ==== */
+.team-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin: 60px 0;
+}
+
+.team-card {
+  width: 250px;
+  text-align: center;
+  transition: 0.4s ease;
+  opacity: 0.4;
+  transform: scale(0.9);
+}
+
+.team-card img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  font-size: 20px;
+  color: #222;
+}
+
+.team-card p {
+  color: #777;
+  font-size: 14px;
+}
+
+.team-card.focus {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+.team-card.dim {
+  opacity: 0.35;
+}
+
+/* ==== Controls ==== */
+.team-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.team-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #e60000;
+  color: #e60000;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.team-btn:hover {
+
+  color: #e60000;
+}
+
+/* Progress Bar */
+.team-progress-track {
+  width: 700px;
+  height: 3px;
+  background: #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.team-progress {
+  height: 3px;
+  background: #e60000;
+  transition: width 0.4s ease;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 900px) {
+  .team-slider {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .team-progress-track {
+    width: 200px;
+  }
+}

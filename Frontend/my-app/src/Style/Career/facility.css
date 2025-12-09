@@ -1,0 +1,157 @@
+.perks-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  background-color: #fff5ee; /* light peach background */
+  font-family: var(--font-primary);
+}
+.perk-inside {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.perks-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.perks-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #e94b35; /* orange blob color */
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.perks-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Accordion Styles */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordion-item {
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.accordion-header:hover {
+  background-color: #f9f9f9;
+}
+
+.accordion-item.active .accordion-header {
+  border-left: 5px solid #e94b35;
+}
+
+.arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-body {
+  padding: 15px 20px;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #eee;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .perks-section {
+    padding: 30px 15px;
+  }
+  .perks-title {
+    font-size: 24px;
+  }
+  .perks-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* CTA Full Screen */
+.cta-section {
+  margin-top: 40px;
+  width: 100vw;           /* full viewport width */
+  position: relative;     
+  left: 50%;              
+  right: 50%;
+  margin-left: -50vw;     
+  margin-right: -50vw;    
+  background: white;      
+  padding: 50px 20px;     
+  text-align: center;
+  border-radius: 0;       
+}
+
+.cta-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  position: relative;      
+  display: inline-block;  
+  z-index: 1;             
+}
+
+
+
+.cta-section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: black;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .cta-section h3 {
+    font-size: 1.5rem;
+  }
+  .cta-section h3::before {
+    width: 80px;          
+    height: 190px;
+  }
+  .cta-section p {
+    font-size: 0.95rem;
+  }
+}

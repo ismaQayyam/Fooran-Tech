@@ -1,0 +1,44 @@
+.services-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  
+}
+
+.services-img {
+  width: 70%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* 📱 Mobile only */
+@media (max-width: 480px) {
+  .services-img {
+    width: 460px;
+    border-radius: 6px;
+  }
+}
+
+/* 📲 Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .services-img {
+    width: 950px;
+  }
+}
+
+/* 💻 Medium Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-img {
+    width: 970px;
+
+  }
+}
+@media (min-width: 1024px) and (max-width: 1900px) {
+  .services-img {
+    width: 1000px;
+
+  }
+}

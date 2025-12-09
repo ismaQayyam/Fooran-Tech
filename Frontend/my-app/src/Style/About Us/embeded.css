@@ -1,0 +1,233 @@
+/* =============================
+   Embedded Services Section CSS
+   ============================= */
+
+.embedded-section {
+    font-family: var(--font-primary);
+  width: 100%;
+  padding: 80px 20px;
+  background: #f1f2fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.embedded-title {
+    font-family: var(--font-primary);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #000;
+}
+
+.embedded-grid {
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Equal Height Cards */
+.embedded-card {
+  position: relative;
+  background: #fff;
+  border-radius: 40px 0px 0px 0px;
+  padding: 60px 30px 40px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  min-height: 340px; /* 🟢 Bigger card height */
+}
+
+/* ===== ICON BOX ===== */
+.embedded-icon-box {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00b7d3;
+  width: 80px;
+  height: 80px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Tilted wrapper */
+.tilted-bg {
+  transform: translateX(-50%) rotate(10deg);
+}
+
+.tilted-bg img {
+  transform: rotate(-10deg);
+}
+
+.embedded-icon-box img {
+  width: 40px;
+  transition: all 0.45s ease;
+}
+
+/* =============================
+   PREMIUM HOVER EFFECTS
+   ============================= */
+
+.embedded-card:hover {
+  transform: translateY(-14px) scale(1.03);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.15);
+}
+
+.embedded-card:hover .embedded-icon-box {
+  background: #00e0ff;
+  transform: translateX(-50%) scale(1.12) rotate(2deg);
+  box-shadow: 0 18px 35px rgba(0, 183, 211, 0.45);
+}
+
+/* Icon glow zoom */
+.embedded-card:hover .embedded-icon-box img {
+  transform: scale(1.18);
+}
+
+/* Light pulse effect */
+.embedded-card:hover {
+  animation: pulseGlow 0.9s ease-out;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 10px 25px rgba(0, 183, 211, 0.15); }
+  100% { box-shadow: 0 22px 40px rgba(0, 183, 211, 0.25); }
+}
+
+/* Text */
+.embedded-card-title {
+    font-family: var(--font-primary);
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.embedded-line {
+  width: 40px;
+  height: 3px;
+  background: #00b7d3;
+  margin: 10px auto 20px;
+}
+
+.embedded-desc {
+    font-family: var(--font-primary);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+}
+
+
+@media (max-width: 1024px) {
+
+  .embedded-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 40px;
+    justify-items: center; /* centers grid items */
+  }
+
+  /* Make card height bigger on tablets */
+  .embedded-card {
+    min-height: 400px; /* slightly taller */
+  }
+
+  /* Remove previous 3rd card centering */
+  .embedded-card:nth-child(3) {
+    grid-column: auto;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* ========== MOBILE LARGE (600–768px) ========== */
+@media (max-width: 768px) {
+
+  .embedded-title {
+    font-size: 26px;
+  }
+
+  .embedded-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+    max-width: 480px;
+    gap: 40px;
+  }
+
+  .embedded-card {
+    padding: 80px 25px 40px; /* more top padding */
+    min-height: 420px; /* taller */
+  }
+
+  .embedded-icon-box {
+    width: 74px;
+    height: 74px;
+  }
+
+  .embedded-icon-box img {
+    width: 34px;
+  }
+}
+
+/* ========== SMALL MOBILES (below 480px) ========== */
+@media (max-width: 480px) {
+
+  .embedded-section {
+    padding: 60px 15px;
+  }
+
+  .embedded-title {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+
+  .embedded-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 35px;
+  }
+
+  .embedded-card {
+    padding: 80px 20px 35px; /* more top padding */
+    border-radius: 30px 0 0 0;
+    min-height: 400px; /* taller */
+  }
+
+  .embedded-card-title {
+    font-size: 18px;
+  }
+
+  .embedded-desc {
+    font-size: 14px;
+  }
+
+  .embedded-icon-box {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+  }
+
+  .embedded-icon-box img {
+    width: 30px;
+  }
+}
+/* ========== TABLETS & Mid-size screens (iPad Air, iPad Pro, Surface Pro) ========== */
+@media (max-width: 1024px) and (min-width: 769px) {
+
+  .embedded-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 40px;
+    justify-items: center; /* centers grid items */
+  }
+
+  .embedded-card {
+    min-height: 400px; /* slightly taller */
+    width: 70%; /* narrower card for mid-size screens */
+    max-width: 600px; /* prevent too wide */
+  }
+}
